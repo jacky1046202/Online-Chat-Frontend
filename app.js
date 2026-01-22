@@ -6,7 +6,7 @@ const backendUrl = "online-chat-backend-g9mo.onrender.com";
 // 變數準備
 let socket;
 let myName = "";
-const wsUrl = "wss://" + backendUrl + "/ws";
+const wsUrl = "wss://" + backendUrl + "/nigg";
 
 // 進入聊天室
 function enterChat() {
