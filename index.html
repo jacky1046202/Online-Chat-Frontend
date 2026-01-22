@@ -36,13 +36,9 @@
     <script>
         // 1. 判斷現在是本機開發還是正式環境
         // 如果網址是 http，就用 ws；如果網址是 https，就用 wss (安全連線)
-        const protocol = window.location.protocol === 'https:' ? 'wss://' : 'ws://';
-        const host = window.location.host; // 例如 localhost:8080 或 my-app.onrender.com
+        const backendUrl = "online-chat-backend-g9mo.onrender.com";
 
-        // 記得嗎？你的 Go 路由設定是 /nigg (或是改回 /ws 了？請這裡要對應你的 Go 程式碼)
-        // 建議改成 /ws 比較專業，下面我先用 /ws 舉例
-        const wsUrl = protocol + host + "/nigg";
-
+        const wsUrl = "wss://" + backendUrl + "/nigg";
         // 2. 建立 WebSocket 連線
         const socket = new WebSocket(wsUrl);
 
