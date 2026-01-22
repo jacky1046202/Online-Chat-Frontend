@@ -1,0 +1,151 @@
+/* --- CSS 美化區 --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2c2f33;
+    /* 深色背景 */
+    color: white;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* 登入層 (輸入名字用) */
+#login-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #23272a;
+    z-index: 100;
+}
+
+input {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    margin: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #7289da;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #5b6eae;
+}
+
+/* 聊天室主畫面 */
+#chat-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #2c2f33;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    display: none;
+    /* 一開始隱藏，登入後顯示 */
+}
+
+#header {
+    background-color: #23272a;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-bottom: 1px solid #23272a;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#message-area {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    /* 訊息多時可捲動 */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 訊息氣泡樣式 */
+.message-row {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+}
+
+.message-row.self {
+    align-self: flex-end;
+    /* 自己的訊息靠右 */
+    align-items: flex-end;
+}
+
+.message-row.other {
+    align-self: flex-start;
+    /* 別人的訊息靠左 */
+    align-items: flex-start;
+}
+
+.username {
+    font-size: 0.8em;
+    color: #99aab5;
+    margin-bottom: 2px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.bubble {
+    padding: 10px 15px;
+    border-radius: 18px;
+    font-size: 1em;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.self .bubble {
+    background-color: #7289da;
+    /* 藍色氣泡 */
+    color: white;
+    border-bottom-right-radius: 2px;
+}
+
+.other .bubble {
+    background-color: #40444b;
+    /* 灰色氣泡 */
+    color: white;
+    border-bottom-left-radius: 2px;
+}
+
+.system-msg {
+    text-align: center;
+    color: #99aab5;
+    font-size: 0.8em;
+    margin: 10px 0;
+}
+
+/* 底部輸入區 */
+#input-area {
+    padding: 15px;
+    background-color: #23272a;
+    display: flex;
+    gap: 10px;
+}
+
+#input-msg {
+    flex: 1;
+}
